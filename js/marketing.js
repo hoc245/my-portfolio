@@ -1,6 +1,9 @@
+$(document).ready(function() {
+    callAJAX('marketing');
+})
 window.onload = () => {
     $('#portfolio-menu').addClass('active');
-    for (var i = 0; itemHolder.length <= 6 ? i < itemHolder.length  : i < 6; i++) {
+    for (var i = 0; itemHolder.length <= 3 ? i < itemHolder.length  : i < 3; i++) {
         createItemGalery(itemHolder[i]);
         currentItemNum = $('.portfolio-menu-item').length;
     }
@@ -60,8 +63,11 @@ function createItemGalery(url) {
     $portfolioItem.classList.add('portfolio-menu-item');
     $portfolioItem.innerHTML = `
         <img src="${url}" alt="logo">
-    `
+    `;
     $portfolioWrapper.append($portfolioItem);
+    setTimeout(function(){
+        $('.portfolio-menu-item').addClass('show');
+    },500)
 }
 function callAJAX(filter) {
     $.ajax({
@@ -75,14 +81,13 @@ function callAJAX(filter) {
         }
     })
 }
-callAJAX('marketing');
 var $showMoreBtn = $('#showmore-btn');
 
 $showMoreBtn.click(() => {
     if (currentItemNum >= itemHolder.length) {
         $showMoreBtn.addClass('disable');
     }
-    for (var i = currentItemNum; (currentItemNum + 6) > itemHolder.length ? i < itemHolder.length : i < (currentItemNum + 6); i++ ) {
+    for (var i = currentItemNum; (currentItemNum + 3) > itemHolder.length ? i < itemHolder.length : i < (currentItemNum + 3); i++ ) {
         createItemGalery(itemHolder[i]);
     }
     currentItemNum = $('.portfolio-menu-item').length;

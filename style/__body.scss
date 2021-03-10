@@ -92,10 +92,24 @@ section {
     }
 }
 .form-email {
+    position: relative;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 45px;
+    &.error .email {
+        border: 1px solid rgb(255, 100, 100);
+        color: rgb(255, 100, 100);
+        margin-bottom: 30px;
+        &::placeholder {
+            color: rgb(255, 100, 100);
+        }
+    }
+    &.error p {
+        opacity: 1;
+        line-height: 12px;
+        visibility: visible;
+    }
     .email {
         width: 267px;
         height: 38px;
@@ -104,11 +118,27 @@ section {
         background-color: white;
         margin-right: 15px;
         margin-bottom: 15px;
+        transition: all 300ms ease;
         &::placeholder {
             font-size: var(--form);
             font-style: italic;
             color:var(--dark-gray);
         }
+    }
+    p {
+        transition: all 300ms ease;
+        position: absolute;
+        width: 100%;
+        top: 50px;
+        left: 10px;
+        color: rgb(255, 100, 100);
+        font-size: 12px;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
     }
 }
 .button {
@@ -759,3 +789,4 @@ section {
         }
     }
 }
+

@@ -541,6 +541,7 @@ section.active {
 }
 
 .form-email {
+  position: relative;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -548,6 +549,34 @@ section.active {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-bottom: 45px;
+}
+
+.form-email.error .email {
+  border: 1px solid #ff6464;
+  color: #ff6464;
+  margin-bottom: 30px;
+}
+
+.form-email.error .email::-webkit-input-placeholder {
+  color: #ff6464;
+}
+
+.form-email.error .email:-ms-input-placeholder {
+  color: #ff6464;
+}
+
+.form-email.error .email::-ms-input-placeholder {
+  color: #ff6464;
+}
+
+.form-email.error .email::placeholder {
+  color: #ff6464;
+}
+
+.form-email.error p {
+  opacity: 1;
+  line-height: 12px;
+  visibility: visible;
 }
 
 .form-email .email {
@@ -558,6 +587,8 @@ section.active {
   background-color: white;
   margin-right: 15px;
   margin-bottom: 15px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 .form-email .email::-webkit-input-placeholder {
@@ -582,6 +613,23 @@ section.active {
   font-size: var(--form);
   font-style: italic;
   color: var(--dark-gray);
+}
+
+.form-email p {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  left: 10px;
+  color: #ff6464;
+  font-size: 12px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .button {
@@ -1627,10 +1675,28 @@ main #main-wrapper #portfolio-menu #portfolio-menu-wrapper {
 
 main #main-wrapper #portfolio-menu #portfolio-menu-wrapper .portfolio-menu-item {
   width: 100%;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+main #main-wrapper #portfolio-menu #portfolio-menu-wrapper .portfolio-menu-item:hover img {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
+main #main-wrapper #portfolio-menu #portfolio-menu-wrapper .portfolio-menu-item.show {
+  opacity: 1;
   height: 300px;
 }
 
 main #main-wrapper #portfolio-menu #portfolio-menu-wrapper .portfolio-menu-item img {
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1776,6 +1842,10 @@ main #main-wrapper #portfolio-menu #portfolio-menu-container .portfolio-menu-con
     -ms-grid-columns: (auto)[1];
         grid-template-columns: repeat(1, auto);
   }
+}
+
+.button {
+  cursor: pointer;
 }
 
 .button.disable {
