@@ -150,7 +150,7 @@ section {
         }
     }
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 760px) {
     #intro {
         padding: 30px 30px 0 30px;
         #intro-content {
@@ -423,7 +423,7 @@ section {
         }
     }
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 760px) {
     #services {
         padding: 30px;
         .services-item {
@@ -517,8 +517,7 @@ section {
         display:flex;
         justify-content: space-between;
         .portfolio-item {
-            max-width: 350px;
-            width: 30%;
+            width: 33%;
             height: 300px;
             position: relative;
             padding: 40px;
@@ -576,14 +575,18 @@ section {
         }
     }
 }
-@media only screen and (max-width:786px) {
+@media only screen and (max-width:760px) {
     #portfolio {
         padding: 50px 0;
+        #portfolio-title {
+            padding-left: 30px;
+        }
         #portfolio-list {
             flex-direction: column;
             .portfolio-item {
                 max-width: 100%;
                 width: 100%;
+                padding: 20px;
                 &+.portfolio-item {
                     margin-top: 10px;
                 }
@@ -591,16 +594,12 @@ section {
         }
     }
 }
-@media only screen and (max-width:720px) {
+@media only screen and (max-width:550px) {
     #portfolio {
         padding: 30px 0;
         #portfolio-title {
-            padding-left: 30px;
+            padding-left: 0;
         }
-    }
-}
-@media only screen and (max-width: 425px) {
-    #portfolio {
         #portfolio-list {
             .portfolio-item {
                 height: 240px;

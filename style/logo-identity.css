@@ -637,7 +637,7 @@ section.active {
   background-image: url("../assets/icon/Next Icon - Light - 24x24.svg");
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 760px) {
   #intro {
     padding: 30px 30px 0 30px;
   }
@@ -989,7 +989,7 @@ section.active {
      object-fit: contain;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 760px) {
   #services {
     padding: 30px;
   }
@@ -1109,8 +1109,7 @@ section.active {
 }
 
 #portfolio #portfolio-list .portfolio-item {
-  max-width: 350px;
-  width: 30%;
+  width: 33%;
   height: 300px;
   position: relative;
   padding: 40px;
@@ -1192,9 +1191,12 @@ section.active {
      object-fit: cover;
 }
 
-@media only screen and (max-width: 786px) {
+@media only screen and (max-width: 760px) {
   #portfolio {
     padding: 50px 0;
+  }
+  #portfolio #portfolio-title {
+    padding-left: 30px;
   }
   #portfolio #portfolio-list {
     -webkit-box-orient: vertical;
@@ -1205,22 +1207,20 @@ section.active {
   #portfolio #portfolio-list .portfolio-item {
     max-width: 100%;
     width: 100%;
+    padding: 20px;
   }
   #portfolio #portfolio-list .portfolio-item + .portfolio-item {
     margin-top: 10px;
   }
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 550px) {
   #portfolio {
     padding: 30px 0;
   }
   #portfolio #portfolio-title {
-    padding-left: 30px;
+    padding-left: 0;
   }
-}
-
-@media only screen and (max-width: 425px) {
   #portfolio #portfolio-list .portfolio-item {
     height: 240px;
   }
