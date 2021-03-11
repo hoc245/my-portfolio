@@ -3,10 +3,6 @@ $(document).ready(function() {
 })
 window.onload = () => {
     $('#portfolio-menu').addClass('active');
-    for (var i = 0; itemHolder.length <= 3 ? i < itemHolder.length  : i < 3; i++) {
-        createItemGalery(itemHolder[i]);
-        currentItemNum = $('.portfolio-menu-item').length;
-    }
 }
 /*******************
 ******* NAV ********
@@ -76,7 +72,13 @@ function callAJAX(filter) {
             for (var i = 0; i < data.length; i++) {
                 if (data[i].filter == filter) {
                     itemHolder.push(data[i].url + "/" + data[i].name + data[i].type);
-                }          
+                }
+                if (i == (data.length - 1)) {
+                    for (var j = 0; itemHolder.length <= 3 ? j < itemHolder.length  : j < 3; j++) {
+                        createItemGalery(itemHolder[j]);
+                        currentItemNum = $('.portfolio-menu-item').length;
+                    }
+                }           
             }
         }
     })
