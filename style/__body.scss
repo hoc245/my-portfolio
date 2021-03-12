@@ -40,6 +40,7 @@ section {
             color:var(--blue);
             &:nth-of-type(2) {
                 margin-bottom: 60px;
+                white-space: nowrap;
             }
         }
         h3 {
@@ -326,17 +327,54 @@ section {
         }
         #about-exp-menu {
             .about-exp-item {
+                position: relative;
                 margin-bottom: 20px;
                 h2 {
                     font-size: var(--section-h2);
                     font-weight: 500;
-                    margin-bottom: 15px;
+                    margin-bottom: 5px;
                     color: var(--black);
+                    padding-right: 30px;
+                }
+                span {
+                    cursor: pointer;
+                    position: absolute;
+                    top:0;
+                    right:0;
+                    width: 24px;
+                    height: 24px;
+                    transform: rotate(90deg);
+                    transition: all 200ms ease;
+                    &:hover {
+                        filter: brightness(180%);
+                    }
+                    &.active {
+                        transform: rotate(-90deg);
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
                 }
                 p {
                     font-size: var(--section-description);
                     font-weight: 400;
                     color: var(--dark-gray);
+                    &:first-of-type {
+                        margin-bottom: 15px;
+                    }
+                }
+                .about-description {
+                    line-height: 0em;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 200ms ease;
+                    &.active {
+                        line-height: 1.5em;
+                        opacity: 1;
+                        visibility: visible;
+                    }
                 }
                 &:last-of-type {
                     margin-bottom: 0;

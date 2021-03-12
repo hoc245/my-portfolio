@@ -231,6 +231,14 @@ main {
     main {
         #main-wrapper {
             #portfolio-menu {
+                #portfolio-menu-title {
+                    h1 {
+                        margin-right:0;
+                    }
+                    hr {
+                        display: none;
+                    }
+                }
                 #portfolio-menu-container {
                     .portfolio-menu-container-item {
                         flex: 0 0 100%;
@@ -241,12 +249,19 @@ main {
         }
     }
 }
-@media only screen and (max-width:425px) {
+@media only screen and (max-width:450px) {
     main {
         #main-wrapper {
             #portfolio-menu {
                 #portfolio-menu-title {
                     padding-left: 0;
+                    h1 {
+                        display:flex;
+                        flex-wrap: wrap;
+                        a:nth-of-type(2) {
+                            flex: 0 0 100%;
+                        }
+                    }
                 }
                 #portfolio-menu-wrapper {
                     grid-template-columns: repeat(1,auto);

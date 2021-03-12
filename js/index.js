@@ -38,8 +38,24 @@ window.addEventListener('scroll',function(){
 var navBarAnchor = $('.nav-bar-item a');
 var footerBarAnchor = $('footer ul li a');
 navBarAnchor.click(function(){
-    navBarAnchor.parent().removeClass('active');
-    $(this).parent().addClass('active');
+    if (hamberger.hasClass('active')) {
+        hamberger.removeClass('active');
+        navOverlay.removeClass('active');
+        navBar.removeClass('active');
+        $('.nav-bar-item').removeClass('mobileActive');
+        $('.nav-bar-social-item').removeClass('mobileActive');
+    }
+    if(this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        },800,function(){
+            window.location.hash = hash
+        })
+    }
+})
+footerBarAnchor.click(function(){
     if(this.hash !== "") {
         event.preventDefault();
         var hash = this.hash;
@@ -58,12 +74,34 @@ window.addEventListener('scroll',() => {
     var offsetY = window.pageYOffset;
     var innerHeight = window.innerHeight;
     sectionWrapper.each((index,ele) => {
+        var idEle = ele.id.charAt(0).toUpperCase() + ele.id.slice(1);
         if((offsetY + innerHeight - 250) > ele.offsetTop) {
             ele.classList.add('active');
+            $('.nav-bar-item').removeClass('active');
+            $(`.nav-bar-item a:contains("${idEle}")`).parent().addClass('active');
         }
     })
 })
-/* **********************
+/************************
+******* ABOUT ME ********
+*************************/
+var $aboutExpToggleBtn = $('.about-exp-item span');
+var $aboutExpDescription = $('.about-exp-item .about-description');
+
+$aboutExpToggleBtn.each(function(index) {
+    $(this).click(function() {
+        $aboutExpToggleBtn.removeClass('active');
+        if ($aboutExpDescription[index].classList.contains('active')) {
+            $aboutExpDescription[index].classList.remove('active');
+            $(this).removeClass('active');
+        } else {
+            $aboutExpDescription.removeClass('active');
+            $aboutExpDescription[index].classList.add('active');
+            $(this).addClass('active');
+        }
+    })
+})
+/************************
 ******* SERVICES ********
 *************************/
 var servicesItemText = $('.services-item-text')

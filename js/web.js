@@ -88,6 +88,7 @@ var $showMoreBtn = $('#showmore-btn');
 $showMoreBtn.click(() => {
     if (currentItemNum >= itemHolder.length) {
         $showMoreBtn.addClass('disable');
+        $showMoreBtn.html("<span>That's all I have now</span>");
     }
     for (var i = currentItemNum; (currentItemNum + 3) > itemHolder.length ? i < itemHolder.length : i < (currentItemNum + 3); i++ ) {
         createItemGalery(itemHolder[i]);

@@ -5,9 +5,9 @@
 // Define font size responsive
 :root {
     --nav-item : 14px;
-    --main-h1 : 25px;
-    --main-h2 : 21px;
-    --main-h3 : 14px;
+    --main-h1 : 28px;
+    --main-h2 : 30px;
+    --main-h3 : 16px;
     --btn : 14px;
     --form : 12px;
     --section-h1 : 20px;
@@ -22,6 +22,13 @@
     --footer : 14px;
 }
     // From Mobile to Tablet screen
+@media only screen and (max-width: 1024px) {
+    :root {
+        --main-h1 : 20px;
+        --main-h2 : 24px;
+        --main-h3 : 15px;
+    }
+}
 @media only screen and (max-width:768px) {
     :root {
         --main-h1 : 16px;
